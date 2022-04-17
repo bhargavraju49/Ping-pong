@@ -3,6 +3,9 @@ const bottom = document.getElementById("bottom");
 const container = document.getElementById("container");
 const ball = document.getElementById("ball");
 
+var score = 0;
+
+
 (function () {
   const top = document.getElementById("top");
   const bottom = document.getElementById("bottom");
@@ -17,18 +20,12 @@ const ball = document.getElementById("ball");
   var s = 2;
   var k = 4;
 
+
   let ballTimer = setInterval(ballMovement, 8);
   function ballMovement() {
     let ballX = ball.offsetLeft;
     let ballY = ball.offsetTop;
-    let containerWidth = container.offsetWidth;
-    let containerHeight = container.offsetHeight;
-    let topX = top.offsetLeft;
-    let topY = top.offsetTop;
-    let topWidth = top.offsetWidth;
-    let bottomX = bottom.offsetLeft;
-    let bottomY = bottom.offsetTop;
-    let bottomWidth = bottom.offsetWidth;
+
     // console.log(m)
     if (
       ballY == container.offsetWidth - ball.offsetHeight / 2 - 6 ||
@@ -36,6 +33,7 @@ const ball = document.getElementById("ball");
     ) {
       clearInterval(ballTimer);
       console.log("game over");
+      window.alert('Game Over with a score off ' + score +' points')
     }
     // left wall
     else if (
@@ -70,6 +68,7 @@ const ball = document.getElementById("ball");
         "px";
       s = s * -1;
       m = Math.random()*-1
+      score+=1
       // console.log("ok");  
     }
 
@@ -82,6 +81,7 @@ const ball = document.getElementById("ball");
       ball.style.top = top2.offsetHeight + ball.offsetHeight / 2 - 3 + "px";
       s = s * -1;
       m = Math.random()*-1
+      score+=1
       // console.log("ok up");
     }
 
