@@ -62,7 +62,7 @@ var score = 0;
       ballX > bottom.offsetLeft - bottom.offsetWidth/2
     ) {
       ball.style.top =
-        container.offsetWidth -
+        container.offsetHeight -
         ball.offsetHeight / 2 -
         (5 + bottom.offsetHeight) +
         "px";
@@ -90,7 +90,7 @@ var score = 0;
       ballY + s > container.offsetWidth - ball.offsetHeight / 2 - 6 &&
       ballY != container.offsetWidth - ball.offsetHeight / 2 - 6
     ) {
-      ball.style.top = container.offsetWidth - ball.offsetHeight / 2 - 6 + "px";
+      ball.style.top = container.offsetHeight - ball.offsetHeight / 2 - 6 + "px";
       s = s * -1;
       // console.log('down')
     }
