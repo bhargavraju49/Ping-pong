@@ -121,14 +121,29 @@ var score = 0;
       event.key === "ArrowRight" &&
       leftComputedStyle < container.clientWidth - top.clientWidth / 2
     ) {
-      top.style.left = parseInt(leftComputedStyle) + rodSpeed + "px";
-      bottom.style.left = parseInt(leftComputedStyle) + rodSpeed + "px";
+      if (parseInt(leftComputedStyle) + rodSpeed > container.offsetWidth - bottom.offsetWidth/2) {
+        top.style.left = container.offsetWidth - bottom.offsetWidth/2 + "px";
+        bottom.style.left = container.offsetWidth - bottom.offsetWidth/2 + "px";
+      }
+      else{
+        top.style.left = parseInt(leftComputedStyle) + rodSpeed + "px";
+        bottom.style.left = parseInt(leftComputedStyle) + rodSpeed + "px";
+      }
+      
     } else if (
       event.key === "ArrowLeft" &&
       leftComputedStyle > top.clientWidth / 2
     ) {
-      top.style.left = parseInt(leftComputedStyle) - rodSpeed + "px";
-      bottom.style.left = parseInt(leftComputedStyle) - rodSpeed + "px";
+      if (parseInt(leftComputedStyle) - rodSpeed < 0)
+      {
+        top.style.left = "0px";
+        bottom.style.left = "0px";
+      }
+      else{
+        top.style.left = parseInt(leftComputedStyle) - rodSpeed + "px";
+        bottom.style.left = parseInt(leftComputedStyle) - rodSpeed + "px";
+      }
+
     }
   });
 
