@@ -2,7 +2,7 @@ const top2 = document.getElementById("top");
 const bottom = document.getElementById("bottom");
 const container = document.getElementById("container");
 const ball = document.getElementById("ball");
-const rodSpeed = 10;
+const rodSpeed = 30;
 var score = 0;
 
 
