@@ -28,7 +28,7 @@ var score = 0;
 
     // console.log(m)
     if (
-      ballY == container.offsetWidth - ball.offsetHeight / 2 - 6 ||
+      ballY == container.offsetHeight - ball.offsetHeight / 2 - 6 ||
       ballY == ball.offsetHeight / 2
     ) {
       clearInterval(ballTimer);
@@ -69,7 +69,7 @@ var score = 0;
       s = s * -1;
       m = Math.random()*-1
       score+=1
-      // console.log("ok");  
+      console.log("ROD HIT DOWN");  
     }
 
     // Rod Hit Up
@@ -82,17 +82,17 @@ var score = 0;
       s = s * -1;
       m = Math.random()*-1
       score+=1
-      // console.log("ok up");
+      console.log("ok up");
     }
 
     // down wall
     else if (
-      ballY + s > container.offsetWidth - ball.offsetHeight / 2 - 6 &&
-      ballY != container.offsetWidth - ball.offsetHeight / 2 - 6
+      ballY + s > container.offsetHeight - ball.offsetHeight / 2 - 6 &&
+      ballY != container.offsetHeight - ball.offsetHeight / 2 - 6
     ) {
       ball.style.top = container.offsetHeight - ball.offsetHeight / 2 - 6 + "px";
       s = s * -1;
-      // console.log('down')
+      console.log('down')
     }
     // upwall
     else if (
@@ -101,7 +101,7 @@ var score = 0;
     ) {
       ball.style.top = ball.offsetHeight / 2 + "px";
       s = s * -1;
-      // console.log('upwall')
+      console.log('upwall')
     } else {
       ball.style.left = (ballX + m*k) + "px";
       ball.style.top = (ballY + s) + "px";
